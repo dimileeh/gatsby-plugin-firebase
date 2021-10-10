@@ -1,3 +1,3 @@
-import firebase from "./src/firebase";
+import firebaseApp from "./src/firebase";
 
-export default firebase;
+export default firebaseApp;
