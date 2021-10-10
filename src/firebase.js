@@ -1,6 +1,7 @@
-import { initializeApp } from "firebase/app"
+import firebase from "firebase/compat/app";
 
-const firebaseApp = initializeApp({
+if (!firebase.apps.length) {
+  firebase.initializeApp({
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     databaseURL: process.env.FIREBASE_DATABASE_URL,
@@ -9,6 +10,7 @@ const firebaseApp = initializeApp({
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
-});
+  });
+}
 
-export default firebaseApp;
+export default firebase;
